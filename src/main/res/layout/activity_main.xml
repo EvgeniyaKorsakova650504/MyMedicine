@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your reminders:"
+        android:textSize="30sp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/PillBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Pills"
+        android:onClick="onClickPills"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/MeasureBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Measures"
+        android:onClick="onClickMeasures"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/SettingBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:onClick="onClickSettings"
+        android:layout_gravity="bottom|center"/>
+</LinearLayout>

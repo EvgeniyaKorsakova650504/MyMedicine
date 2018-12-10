@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="fill">
+
+
+    <ListView
+        android:id="@+id/listPills"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/fabPill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:src="@drawable/plus"
+        android:onClick="onClickAdd"
+        fab:fab_colorNormal="#D81B60"
+        fab:fab_colorPressed="#ffff"
+        fab:fab_colorRipple="#D81B60" />
+
+</FrameLayout>
