@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="fill">
+
+    <Button
+        android:id="@+id/editTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:text="Enter date"
+        android:onClick="onClickDateFind" />
+
+
+    <Button
+        android:id="@+id/findBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:text="Find"
+        android:onClick="onClickFind"/>
+    <TextView
+        android:id="@+id/textMeasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last measures"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="20dp"
+        android:textSize="20sp"/>
+
+    <FrameLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="fill">
+
+
+        <ListView
+            android:id="@+id/listMeasures"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fabPill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:src="@drawable/plus"
+            android:onClick="onClickAddMeasure"
+            fab:fab_colorNormal="#F44335"
+            fab:fab_colorPressed="#FF7960"
+            fab:fab_colorRipple="#F44335" />
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>
