@@ -16,7 +16,7 @@ public class Receiver extends BroadcastReceiver {
         builder.setWhen(System.currentTimeMillis());
         builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setContentTitle("Remind");
-        builder.setContentText("Beep");
+        builder.setContentText("Don't forget about pills");
         builder.setDefaults(NotificationCompat.DEFAULT_LIGHTS | NotificationCompat.DEFAULT_SOUND);
 
 

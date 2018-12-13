@@ -21,8 +21,8 @@
         android:layout_margin="16dp"
         android:src="@drawable/plus"
         android:onClick="onClickAdd"
-        fab:fab_colorNormal="#D81B60"
-        fab:fab_colorPressed="#ffff"
-        fab:fab_colorRipple="#D81B60" />
+        fab:fab_colorNormal="#F44335"
+        fab:fab_colorPressed="#FF7960"
+        fab:fab_colorRipple="#F44335" />
 
 </FrameLayout>

@@ -20,7 +20,11 @@
         <activity android:name=".ListOfPills" />
         <activity android:name=".AddMedication" />
         <activity android:name=".ListMeasure" />
-        <activity android:name=".Medication"></activity>
+        <activity android:name=".Medication" />
+
+        <receiver android:name=".Receiver" />
+
+        <activity android:name=".Measure"></activity>
     </application>
 
 </manifest>

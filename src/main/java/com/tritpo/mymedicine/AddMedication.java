@@ -19,7 +19,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -33,6 +32,7 @@ public class AddMedication extends AppCompatActivity {
     String time = "";
     ArrayList<String> tempTime;
     Calendar cal;
+    public static int ALARM_TYPE_ELAPSED = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,45 +159,48 @@ public class AddMedication extends AppCompatActivity {
         cv.put(DB.COLUMN_COUNT, count);
         db.insert(DB.TABLE_NAME, null, cv);
         DB.close();
-        finish();
         setAlarm();
+        finish();
     }
-
     private void setAlarm() {
+
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent;
         PendingIntent pendingIntent;
 
         intent = new Intent(this, Receiver.class);
-        pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-        for (int i = 1; i < time.length()-1; i++) {
+        pendingIntent = PendingIntent.getBroadcast(this, ALARM_TYPE_ELAPSED, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        for (int i = 0; i < tempTime.size(); i++) {
 
-
-            int hour = Integer.parseInt(time.substring(1, time.indexOf(':')));
-            Log.i("LOG_TAG", "Hour: " + hour);
-            int minute = Integer.parseInt(time.substring(time.indexOf(':') + 1, time.length()-1));
-            Log.i("LOG_TAG", "Minute: " + hour);
-
-
+            String temp=tempTime.get(i);
+            int hour = Integer.parseInt(temp.substring(0, temp.indexOf(':')));
+            int minute = Integer.parseInt(temp.substring(temp.indexOf(':') + 1, temp.length()));
 
             Calendar calendar = Calendar.getInstance();
-            calendar.set(Calendar.HOUR_OF_DAY, hour);
-            calendar.set(Calendar.MINUTE, minute);
+            int nowH=calendar.get(Calendar.HOUR_OF_DAY);
+            int nowM=calendar.get(Calendar.MINUTE);
 
 
-            int setHour = hour - calendar.get(Calendar.HOUR);
-            int setMin = minute - calendar.get(Calendar.MINUTE);
 
-            long alarmTime = ((setHour * 60 + (setMin - 1)) * 60 ) * 1000;
+            int setHour = hour - nowH;
+            int setMin = minute - nowM;
 
-            Log.i("TimeSet", "Time: " + alarmTime);
-            Log.i("TimeSet", "TimeReal: " + SystemClock.elapsedRealtime());
+
+            long alarmTime = ((setHour * 60 + setMin ) * 60  ) * 1000;
+
             if (alarmTime > 0)
-                manager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis()
-                        + alarmTime, AlarmManager.INTERVAL_DAY, pendingIntent);
+                manager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime()+
+                        alarmTime,AlarmManager.INTERVAL_DAY, pendingIntent);
+            else {
+                alarmTime=24*60*60*1000 -alarmTime;
+                manager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime()+
+                        alarmTime,AlarmManager.INTERVAL_DAY, pendingIntent);
+            }
         }
 
 
     }
+
+
 }
 
