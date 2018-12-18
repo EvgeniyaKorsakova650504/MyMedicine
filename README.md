@@ -14,7 +14,8 @@
    * [Add Measure](https://github.com/EvgeniyaKorsakova650504/MyMedicine/blob/master/Diagrams/Activity/AddMeasureActivity.png)
    * [Add Pills](https://github.com/EvgeniyaKorsakova650504/MyMedicine/blob/master/Diagrams/Activity/AddPillsActivity.png)
    * [Delete Note](https://github.com/EvgeniyaKorsakova650504/MyMedicine/blob/master/Diagrams/Activity/DeleteActivity.png)
-   * [Find Note](https://github.com/EvgeniyaKorsakova650504/MyMedicine/blob/master/Diagrams/Activity/FindItemActivity.png)   
+   * [Find Note](https://github.com/EvgeniyaKorsakova650504/MyMedicine/blob/master/Diagrams/Activity/FindItemActivity.png) 
+1. [Flow of event](https://github.com/EvgeniyaKorsakova650504/MyMedicine/blob/master/Diagrams/Flow%20of%20Event.md)
 1. Sequence Diagram:
    * [Add Measure](https://github.com/EvgeniyaKorsakova650504/MyMedicine/blob/master/Diagrams/Sequence/AddMeasureSequence.png)
    * [Add Pills](https://github.com/EvgeniyaKorsakova650504/MyMedicine/blob/master/Diagrams/Sequence/AddPillsSequence.png)
